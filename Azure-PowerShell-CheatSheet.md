@@ -18,6 +18,8 @@ You can also find me on [![Twitter][1.2]][1], or on [![LinkedIn][2.2]][2].
 [1]: https://twitter.com/AndreiPintica
 [2]: https://www.linkedin.com/in/AndreiPintica
 
+
+
 Cheatsheet with the most common Microsoft Azure PowerShell commands with examples. 
 
 Each section covers one specific set of resources you can manage with your Azure PowerShell Module Per each section you will find the following information:
