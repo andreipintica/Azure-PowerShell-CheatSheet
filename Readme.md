@@ -4,21 +4,7 @@ Welcome to the PowerShell Reference Guide. This guide will provide you with a re
 
 ![](https://img.shields.io/badge/Microsoft-Azure-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a) ![](https://img.shields.io/badge/platform-windows%20%7C%20macos%20%7C%20linux-lightgrey)
 
-<!-- Actual text -->
-
-You can also find me on [![Twitter][1.2]][1], or on [![LinkedIn][2.2]][2].
-
-<!-- Icons -->
-
-[1.2]: http://i.imgur.com/wWzX9uB.png (twitter icon without padding)
-[2.2]: https://raw.githubusercontent.com/tomwechsler/tomwechsler/main/Linkedin.PNG (LinkedIn icon without padding)
-
-<!-- Links to your social media accounts -->
-
-[1]: https://twitter.com/AndreiPintica
-[2]: https://www.linkedin.com/in/AndreiPintica
-
-
+<!-- BREAK -->
 
 Cheatsheet with the most common Microsoft Azure PowerShell commands with examples. 
 
