@@ -1,3 +1,5 @@
+Welcome to the PowerShell Reference Guide. This guide will provide you with a reference to key PowerShell commands necessary for Azure administrators as well as required to pass the [Azure Administrator certification exams from Microsoft AZ-104] (https://docs.microsoft.com/en-us/learn/certifications/exams/az-104)
+
 Cheatsheet with the most common Microsoft Azure PowerShell commands with examples. 
 
 Each section covers one specific set of resources you can manage with your Azure PowerShell Module Per each section you will find the following information:
@@ -11,7 +13,7 @@ Each section covers one specific set of resources you can manage with your Azure
 
 # Azure PowerShell Cheatsheet
 
-Check out the Microsoft Azure PowerShell Overview which has a number of tutorials and guides for learning the basics.
+Check out the [Microsoft Azure PowerShell Overview](https://docs.microsoft.com/en-us/powershell/azure/azureps-support-lifecycle?view=azps-7.1.0) which has a number of tutorials and guides for learning the basics.
 This guide is made up of several PowerShell commands which have been reference from the
 Microsoft documentation and other sources. Before running any of these commands in
 production, please be sure to test them out in an Azure test account. Some commands are
