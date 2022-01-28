@@ -17,21 +17,18 @@ Each section covers one specific set of resources you can manage with your Azure
 
 # Azure PowerShell Cheatsheet
 
-Check out the [Microsoft Azure PowerShell Overview](https://docs.microsoft.com/en-us/powershell/azure/azureps-support-lifecycle?view=azps-7.1.0) which has a number of tutorials and guides for learning the basics.
-This guide is made up of several PowerShell commands which have been reference from the
-Microsoft documentation and other sources. Before running any of these commands in
-production, please be sure to test them out in an Azure test account. Some commands are
-destructive in nature (e.g. removing resource groups, tags etc.) and you need to make sure you
-fully understand the commands that you execute. The guide is divided up into the following
+Check out the [Microsoft Azure PowerShell Overview](https://docs.microsoft.com/en-us/powershell/azure/azureps-support-lifecycle?view=azps-7.1.0) which has a number of tutorials and guides for learning the basics. This guide is made up of several PowerShell commands which have been reference from the Microsoft documentation and other sources. Before running any of these commands in production, please be sure to test them out in an Azure test account. Some commands are destructive in nature (e.g. removing resource groups, tags etc.) and you need to make sure you fully understand the commands that you execute. 
+
+The guide is divided up into the following
 sections:
-• Downloading PowerShell and Installing Azure AZ Modules for PowerShell
-• Accounts and Subscriptions
-• Resource Groups
-• Governance
-• Storage
-• Virtual Machines
-• Networking
-• Azure Active Directory 
+1. Downloading PowerShell and Installing Azure AZ Modules for PowerShell
+2. Accounts and Subscriptions
+3.  Resource Groups
+4.  Governance
+5.  Storage
+6.  Virtual Machines
+7.   Networking
+8.   Azure Active Directory 
 
 **Accounts and Subscriptions **
 
