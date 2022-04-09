@@ -28,12 +28,12 @@ The guide is divided up into the following
 sections:
 1. Downloading PowerShell and Installing Azure AZ Modules for PowerShell
 2. Accounts and Subscriptions
-3.  Resource Groups
-4.  Governance
-5.  Storage
-6.  Virtual Machines
-7.   Networking
-8.   Azure Active Directory 
+3. Resource Groups
+4. Governance
+5. Storage
+6. Virtual Machines
+7. Networking
+8. Azure Active Directory 
 
 **Accounts and Subscriptions **
 
@@ -475,6 +475,12 @@ Get-AzNetworkInterface -Name "NIC1" -ResourceGroupName “resourcegroup”
 Get-AzNetworkInterfaceIPConfig -Name "NIC1" -NetworkInterface $nic #Gets information about the IP configuration of the specified network interface.
 The $nic value represents the object returned by Get-AzNetworkInterface. 
 ```
+
+### Check provisioning status for Azure Express Route Circuit ###
+```
+Get-AzExpressRouteCircuit -ResourceGroupName "Test-Resource" -Name "Test-Circuit"
+```
+
 **Create Network Resources**
 
 ### Create subnet configurations
@@ -537,6 +543,7 @@ $nic1= New-AzNetworkInterface -ResourceGroupName “resourcegroup” Name
 LoadBalancerBackendAddressPool $loadBalancer.BackendAddressPools[0] LoadBalancerInboundNatRule $loadBalancer.InboundNatRules[0]
 #Create a network interface using the public IP address and virtual network subnet that you previously created
 ```
+
 **Remove network resources**
 
 ### Delete a virtual network
@@ -555,6 +562,47 @@ Remove-AzLoadBalancer -Name "myLoadBalancer" -ResourceGroupName “resourcegroup
 ```
 Remove-AzPublicIpAddress-Name "myIPAddress" -ResourceGroupName “resourcegroup” #Removes the specified public IP address from the resource group. 
 ```
+
+### Reset an ExpressRoute circuit ###
+When an operation on an ExpressRoute circuit doesn't complete successfully, the circuit might go into a "failed" state. You can reset a failed ExpressRoute circuit using Azure PowerShell. You will need the latest version of the Azure Resource Manager PowerShell cmdlets.
+```
+$ckt = Get-AzExpressRouteCircuit -Name "ExpressRouteARMCircuit" -ResourceGroupName "ExpressRouteResourceGroup"
+
+Set-AzExpressRouteCircuit -ExpressRouteCircuit $ckt
+```
+
+### Identify the root cause for ExpressRoute latency issues ###
+To troubleshoot latency issues with ExpressRoute, the Azure Connectivity Toolkit includes a tool called iPerf.
+
+You use iPerf for basic performance tests, by copying the files to a directory on the host. To test performance, follow these steps:
+
+1. Install the PowerShell Module.
+```
+(new-object Net.WebClient).DownloadString("https://aka.ms/AzureCT") | Invoke-Expression
+```
+This command downloads the PowerShell module and installs it locally.
+
+2. Install the supporting applications.
+```
+Install-LinkPerformance
+```
+This AzureCT command installs iPerf and PSPing in a new directory, "C:\ACTTools". It also opens the Windows Firewall ports to allow ICMP and port 5201 (iPerf) traffic.
+
+3. Run the performance test.
+First, on the remote host, you must install and run iPerf in server mode. Ensure the remote host is listening on either 3389 (RDP for Windows) or 22 (SSH for Linux) and allowing traffic on port 5201 for iPerf. If the remote host is Windows, install the AzureCT and run the Install-LinkPerformance command. The command will set up iPerf and the necessary firewall rules.
+
+When the remote machine is ready, open PowerShell on the local machine and start the test:
+```
+Get-LinkPerformance -RemoteHost IP -TestSeconds 10
+```
+This command runs a series of concurrent load and latency tests to help estimate the bandwidth capacity and latency of your network link.
+
+4.Review the output of the tests.
+
+The detailed results of iPerf tests are in individual text files in the AzureCT tools directory at "C:\ACTTools."
+
+
+
 Azure Active Directory Commands
 Install Azure AD Module
 In order to use the Azure AD commands, you first need to install the Azure AD module. Use the following
