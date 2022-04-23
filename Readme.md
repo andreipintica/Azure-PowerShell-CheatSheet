@@ -476,9 +476,14 @@ Get-AzNetworkInterfaceIPConfig -Name "NIC1" -NetworkInterface $nic #Gets informa
 The $nic value represents the object returned by Get-AzNetworkInterface. 
 ```
 
-### Check provisioning status for Azure Express Route Circuit ###
+### Check provisioning status for Azure Express Route Circuit 
 ```
 Get-AzExpressRouteCircuit -ResourceGroupName "Test-Resource" -Name "Test-Circuit"
+```
+
+### Upgrade ExpressRoute Gateway SKU
+```
+Resize-AzVirtualNetworkGateway
 ```
 
 **Create Network Resources**
